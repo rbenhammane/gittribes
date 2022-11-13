@@ -4,7 +4,7 @@ import vs from '../../public/images/vs.png';
 import sep from '../../public/images/sep.png';
 import styles from "./arena.module.css";
 
-export default function Arena({combats: any[]}) {
+export default function Arena({combats}) {
 
   return (
     <Grid container justifyContent='center' alignContent='center'>
