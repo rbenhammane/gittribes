@@ -39,7 +39,7 @@
 }
 
 .timeIntervalItem, .timeIntervalItemSelected {
-    margin: 0 15px;
+    margin: 0 15px !important;
     text-decoration: underline;
     cursor: pointer;
 }
