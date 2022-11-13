@@ -2,9 +2,9 @@ import {Avatar, Grid} from "@mui/material";
 import styles from './fame.module.css';
 
 
-export default function FamePodiumCard({player, rank}) {
+export default function FamePodiumCard({player, rank}: any) {
 
-  const getRankClass = (rank) => {
+  const getRankClass = (rank: any) => {
     switch (rank) {
       case 1: return styles.podiumCard1;
       case 2: return styles.podiumCard2;

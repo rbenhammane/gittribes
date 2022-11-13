@@ -1,5 +1,5 @@
 
-export function generateVillagesCoords (mapCoords, repos = []) {
+export function generateVillagesCoords (mapCoords: any, repos = []) {
 
   let coordinates = new Array(repos.length);
 
@@ -53,7 +53,7 @@ export function generateVillagesCoords (mapCoords, repos = []) {
   return coordinates;
 }
 
-export function generateLakesCoords (mapCoords, coords = []) {
+export function generateLakesCoords (mapCoords: any, coords:any[] = []) {
 
   let coordinates = [];
 
@@ -117,7 +117,7 @@ export function generateLakesCoords (mapCoords, coords = []) {
   return coordinates;
 }
 
-export function generateForestsCoordinates (mapCoords, coords: any[], bigCoords: any[]) {
+export function generateForestsCoordinates (mapCoords: any, coords: any[], bigCoords: any[]) {
 
   let coordinates = [];
 
@@ -186,7 +186,7 @@ export function generateForestsCoordinates (mapCoords, coords: any[], bigCoords:
   return coordinates;
 }
 
-export function generateTreesCoordinates (mapCoords, smallCoords, coords, bigCoords) {
+export function generateTreesCoordinates (mapCoords: any, smallCoords: any[], coords: any[], bigCoords: any[]) {
 
   let coordinates = [];
 
@@ -261,7 +261,7 @@ export function generateTreesCoordinates (mapCoords, smallCoords, coords, bigCoo
   return coordinates;
 }
 
-export function generateStonesCoordinates (mapCoords, smallCoords, coords, bigCoords, smallCoords1) {
+export function generateStonesCoordinates (mapCoords:any, smallCoords: any[], coords: any[], bigCoords: any[], smallCoords1: any[]) {
 
   let coordinates = [];
 

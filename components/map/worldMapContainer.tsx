@@ -6,7 +6,7 @@ import {useState} from "react";
 
 export default function WorldMapContainer() {
 
-  const [village, setVillage] = useState();
+  const [village, setVillage] = useState<any>();
   const villages = [
      {id: 1, name: 'First project', fires: 1},
      {id: 2, name: 'Second Project', attacks: 4},

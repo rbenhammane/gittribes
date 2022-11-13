@@ -7,9 +7,9 @@ import {
   generateTreesCoordinates, generateVillagesCoords
 } from "./worldMapUtil";
 
-export default function WorldMap({setVillage, villages = []}) {
+export default function WorldMap({setVillage, villages = []}: any) {
 
-  const [mapCoords, setMapCoords] = useState({
+  const [mapCoords, setMapCoords] = useState<any>({
     rotationRadius: 1,
     diameter: 600,
     worldRadius: 320,
@@ -19,18 +19,18 @@ export default function WorldMap({setVillage, villages = []}) {
     mouseY: 0
   });
 
-  const [villagesCoords, setVillagesCoords] = useState();
-  const [lakesCoords, setLakesCoords] = useState();
-  const [forestsCoordinates, setForestsCoordinates] = useState();
-  const [treesCoordinates, setTreesCoordinates] = useState();
-  const [stonesCoordinates, setStonesCoordinates] = useState();
+  const [villagesCoords, setVillagesCoords] = useState<any[]>();
+  const [lakesCoords, setLakesCoords] = useState<any[]>();
+  const [forestsCoordinates, setForestsCoordinates] = useState<any[]>();
+  const [treesCoordinates, setTreesCoordinates] = useState<any[]>();
+  const [stonesCoordinates, setStonesCoordinates] = useState<any[]>();
 
   useEffect(() => {
-    let villagesCoords = generateVillagesCoords(mapCoords, villages);
+    let villagesCoords: any[] = generateVillagesCoords(mapCoords, villages);
     let lakesCoords = generateLakesCoords(mapCoords, villagesCoords);
     let forestsCoordinates = generateForestsCoordinates(mapCoords, villagesCoords, lakesCoords);
-    let treesCoordinates = generateTreesCoordinates(mapCoords, villagesCoords, lakesCoords, forestsCoordinates);
-    let stonesCoordinates = generateTreesCoordinates(mapCoords, villagesCoords, lakesCoords, forestsCoordinates, treesCoordinates);
+    let treesCoordinates: any[] = generateTreesCoordinates(mapCoords, villagesCoords, lakesCoords, forestsCoordinates);
+    let stonesCoordinates = generateTreesCoordinates(mapCoords, [...villagesCoords, ...treesCoordinates], lakesCoords, forestsCoordinates);
     setVillagesCoords(villagesCoords);
     setLakesCoords(lakesCoords);
     setForestsCoordinates(forestsCoordinates);
@@ -38,7 +38,7 @@ export default function WorldMap({setVillage, villages = []}) {
     setStonesCoordinates(stonesCoordinates);
   }, [])
 
-  const handleMouseMove = (event) => {
+  const handleMouseMove = (event: any) => {
 
     if (event.nativeEvent.buttons === 1) {
       let newMapCoords = {...mapCoords};
@@ -75,7 +75,7 @@ export default function WorldMap({setVillage, villages = []}) {
     setMapCoords({...mapCoords, mouseX: 0, mouseY: 0});
   };
 
-  const villageClassName = (coordinate) => {
+  const villageClassName = (coordinate: any) => {
     if (coordinate.repo.fires && coordinate.repo.attacks) {
       return styles.villageFireAttack;
     } else if (coordinate.repo.attacks) {
@@ -96,28 +96,28 @@ export default function WorldMap({setVillage, villages = []}) {
         height: mapCoords.diameter
       }} onMouseMove={handleMouseMove} onMouseLeave={resetMouse} onMouseUp={resetMouse}>
         {
-          villagesCoords?.map(coordinate =>
+          villagesCoords?.map((coordinate: any) =>
             <div key={Math.random()} className={villageClassName(coordinate)} style={{
               top: mapCoords.worldRadius - 40 * coordinate.y,
               right: mapCoords.worldRadius - 40 * coordinate.x
             }} onMouseDown={() => setVillage(coordinate.repo)} />)
         }
         {
-          lakesCoords?.map(coordinate =>
+          lakesCoords?.map((coordinate: any) =>
             <div key={Math.random()} className={styles.lake} style={{
               top: mapCoords.worldRadius - 40 * coordinate.y,
               right: mapCoords.worldRadius - 40 * coordinate.x
             }} />)
         }
         {
-          forestsCoordinates?.map(coordinate =>
+          forestsCoordinates?.map((coordinate: any) =>
             <div key={Math.random()} className={styles.forest} style={{
               top: mapCoords.worldRadius - 40 * coordinate.y,
               right: mapCoords.worldRadius - 40 * coordinate.x
             }} />)
         }
         {
-          treesCoordinates?.map(coordinate =>
+          treesCoordinates?.map((coordinate: any) =>
             <div key={Math.random()} className={styles.trees} style={{
               top: mapCoords.worldRadius - 40 * coordinate.y,
               right: mapCoords.worldRadius - 40 * coordinate.x

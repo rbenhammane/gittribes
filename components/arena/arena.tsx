@@ -8,7 +8,7 @@ export default function Arena({combats}: any) {
 
   return (
     <Grid container justifyContent='center' alignContent='center'>
-      {combats.map((combat, index) => <Fragment key={index}>
+      {combats.map((combat: any, index: any) => <Fragment key={index}>
         <Grid item container spacing={5} className={styles.combat}>
           <Grid item xs={0} sm></Grid>
           <Grid item container xs={12} sm={5} justifyContent='center' alignContent='center' spacing={2} style={{paddingLeft: 0}}>
@@ -16,7 +16,7 @@ export default function Arena({combats}: any) {
               <Avatar style={{width: 100, height: 100, margin: 'auto'}}/>
               <h3 style={{textAlign: 'center'}}>???</h3>
             </Grid>}
-            {combat.attackers.map((attacker, index1) => <Grid key={index1} item>
+            {combat.attackers.map((attacker: any, index1: any) => <Grid key={index1} item>
               <Avatar src={attacker.avatar} style={{width: 100, height: 100, margin: 'auto'}}/>
               <h3 style={{textAlign: 'center'}}>@{attacker.username}</h3>
             </Grid>)}
@@ -29,7 +29,7 @@ export default function Arena({combats}: any) {
               <Avatar style={{width: 100, height: 100, margin: 'auto'}}/>
               <h3 style={{textAlign: 'center'}}>???</h3>
             </Grid>}
-            {combat.defenders.map((attacker, index1) => <Grid key={index1} item>
+            {combat.defenders.map((attacker: any, index1: any) => <Grid key={index1} item>
               <Avatar src={attacker.avatar} style={{width: 100, height: 100, margin: 'auto'}}/>
               <h3 style={{textAlign: 'center'}}>@{attacker.username}</h3>
             </Grid>)}

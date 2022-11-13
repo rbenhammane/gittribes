@@ -5,12 +5,12 @@ import gear from "../../public/images/gears.png"
 import styles from './village.module.css'
 import {useRouter} from "next/router";
 
-export default function Village({id, name, attacks = 0, fires = 0, gears = 0}) {
+export default function Village({id, name, attacks = 0, fires = 0, gears = 0}: any) {
 
   const router = useRouter();
   const {username} = router.query;
 
-  const getClassName = (points) => {
+  const getClassName = (points: any) => {
     if (points < 3) {
       return styles.normal;
     } else if (points < 6) {

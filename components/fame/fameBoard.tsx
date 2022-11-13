@@ -15,9 +15,9 @@ import badge11 from '../../public/images/badge11.png';
 import badge12 from '../../public/images/badge12.png';
 
 
-export default function FameBoard({players}) {
+export default function FameBoard({players}: any) {
 
-  const getBadge = (badge) => {
+  const getBadge = (badge: any) => {
     switch (badge) {
       case '1': return badge1.src;
       case '2': return badge2.src;
@@ -37,14 +37,14 @@ export default function FameBoard({players}) {
   return (
     <Grid container style={{marginTop: 50}}>
 
-      {players.map(player =>
+      {players.map((player: any) =>
         <Grid item container justifyContent='space-between' key={player.id} xs={12} className={styles.boardRow}>
           <Grid item xs sm={3}>
             {player.username}
           </Grid>
           <Grid item container xs direction='row'>
             <Grid item>
-              {player.badges.map((badge, index) => <img key={index} src={getBadge(badge)} width={30} />)}
+              {player.badges.map((badge: any, index: any) => <img key={index} src={getBadge(badge)} width={30} />)}
             </Grid>
           </Grid>
           <Grid item xs={1}>

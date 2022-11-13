@@ -8,7 +8,7 @@ import {useEffect, useState} from "react";
 export default function HallOfFame() {
 
   const [selected, setSelected] = useState(3);
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState<any>([]);
 
   useEffect(() => {
     setPlayers([
@@ -65,8 +65,8 @@ export default function HallOfFame() {
   }, []);
 
   const getPlayers = () => {
-    return players.sort((p1, p2) => p1.storyPoints[selected] > p2.storyPoints[selected] ? -1 : 1)
-      .map(player => ({...player, storyPoints: player.storyPoints[selected]}));
+    return players.sort((p1: any, p2: any) => p1.storyPoints[selected] > p2.storyPoints[selected] ? -1 : 1)
+      .map((player: any) => ({...player, storyPoints: player.storyPoints[selected]}));
   }
 
   return (

@@ -2,7 +2,7 @@ import {Grid} from "@mui/material";
 import styles from './fame.module.css';
 
 
-export default function FameTimeInterval({selected = 4, setSelected}) {
+export default function FameTimeInterval({selected = 4, setSelected}: any) {
 
 
 
