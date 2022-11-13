@@ -1,0 +1,15 @@
+.container {
+    margin-bottom: 20px;
+    background-color: #ac883d;
+}
+
+.logo {
+    font-size: 2rem;
+    font-family: 'Carson';
+    cursor: pointer;
+}
+
+.username {
+    font-family: 'Abraham';
+    cursor: pointer;
+}

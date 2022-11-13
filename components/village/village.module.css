@@ -1,0 +1,21 @@
+.header {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.villageName {
+    color: #94680c;
+    margin-bottom: 20px;
+}
+
+.normal {
+    color: #3b83d8;
+}
+
+.warning {
+    color: #db8d00;
+}
+
+.error {
+    color: red;
+}
